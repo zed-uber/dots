@@ -32,6 +32,14 @@ hl.window_rule({
 -- })
 -- overlayLayerRule:set_enabled(false)
 
+hl.window_rule({
+    name  = "wiremix-float",
+    match = { title = "wiremix" },
+    float = true,
+    size  = "1000 1000",
+    move  = {"(monitor_w - window_w) / 2", "(monitor_h - window_h) / 2"},
+})
+
 -- Hyprland-run windowrule
 hl.window_rule({
     name  = "move-hyprland-run",

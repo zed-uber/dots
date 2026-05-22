@@ -61,3 +61,6 @@ hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("signal-desktop --password-store=\"kwallet6\""))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/set-wallpaper.sh"))
+
+-- Control keybindings
+hl.bind(mainMod .. " + CTRL + B", hl.dsp.exec_cmd("pkill waybar && waybar"))
