@@ -21,9 +21,7 @@
         "mpd",
         "idle_inhibitor",
         "pulseaudio",
-        "network",
-        "keyboard-state",
-        "clock"
+        "network"
     ],
     // Modules configuration
     "hyprland/workspaces": {
