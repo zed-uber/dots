@@ -1,14 +1,44 @@
+-- Load pywal colors from colors-hyprland.conf and convert to Hyprland hex format
+local function load_wal_colors(path)
+    local c = {}
+    local f = io.open(path, "r")
+    if not f then return c end
+    for line in f:lines() do
+        local key, r, g, b = line:match("^%$(%w+)%s*=%s*rgba%((%d+),(%d+),(%d+),")
+        if key then c[key] = { r = tonumber(r), g = tonumber(g), b = tonumber(b) } end
+    end
+    f:close()
+    return c
+end
+
+local wal = load_wal_colors("/home/erik/.cache/wal/colors-hyprland.conf")
+
+-- Returns rgba hex string: rgba("color3", "ee") → "rgba(3c819eee)"
+local function rgba(key, alpha)
+    local c = wal[key]
+    if not c then return "rgba(00000000)" end
+    return string.format("rgba(%02x%02x%02x%s)", c.r, c.g, c.b, alpha or "ff")
+end
+
+-- Returns 0xAARRGGBB integer for shadow/other numeric color fields
+local function argb(key, alpha)
+    local c = wal[key]
+    if not c then return 0xff000000 end
+    alpha = alpha or 0xee
+    return alpha * 0x1000000 + c.r * 0x10000 + c.g * 0x100 + c.b
+end
+
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
         gaps_in  = 5,
         gaps_out = 20,
 
-        border_size = 2,
+        border_size = 4,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = { colors = { rgba("color14", "ee"), rgba("color12", "ee") }, angle = 45 },
+            inactive_border = rgba("color8", "aa"),
         },
 
         resize_on_border = false,
@@ -30,7 +60,7 @@ hl.config({
             enabled      = true,
             range        = 4,
             render_power = 3,
-            color        = 0xee1a1a1a,
+            color        = argb("color0", 0xee),
         },
 
         blur = {

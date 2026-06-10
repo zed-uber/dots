@@ -12,3 +12,5 @@ hyprctl hyprpaper preload "$WALLPAPER"
 hyprctl hyprpaper wallpaper ",$WALLPAPER"
 
 wal -i "$WALLPAPER" -q
+
+hyprctl reload
