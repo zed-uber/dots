@@ -12,6 +12,7 @@ Personal dotfiles for a Wayland desktop built on [Hyprland](https://hyprland.org
 | `ghostty/` | Terminal emulator |
 | `fastfetch/` | System info display |
 | `fontconfig/` | Font fallback rules |
+| `fish/` | Fish shell config and functions |
 
 ## Setup
 
@@ -20,7 +21,7 @@ Uses [GNU Stow](https://www.gnu.org/software/stow/) to symlink configs into plac
 ```bash
 git clone <repo-url> ~/dots
 cd ~/dots
-stow hypr waybar rofi ghostty fastfetch fontconfig
+stow hypr waybar rofi ghostty fastfetch fontconfig fish
 ```
 
 Each directory is structured so stow symlinks it relative to `$HOME` (e.g. `hypr/.config/hypr/` becomes `~/.config/hypr/`).
@@ -36,7 +37,7 @@ sudo pacman -S hyprland hyprpaper waybar rofi-wayland ghostty stow
 ### Terminal and files
 
 ```bash
-sudo pacman -S fastfetch nautilus jq
+sudo pacman -S fastfetch nautilus jq fish
 ```
 
 ### Screenshots
