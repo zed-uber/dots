@@ -37,7 +37,13 @@ hl.window_rule({
     match = { title = "wiremix" },
     float = true,
     size  = "1000 800",
-    move  = {"(monitor_w - window_w) / 2", "(monitor_h - window_h) / 2"},
+})
+
+hl.window_rule({
+    name  = "btop-float",
+    match = { title = "btop" },
+    float = true,
+    size  = "1900 1300",
 })
 
 -- Hyprland-run windowrule

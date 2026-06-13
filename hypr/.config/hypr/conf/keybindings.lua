@@ -67,3 +67,4 @@ hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.confi
 -- Control keybindings
 hl.bind(mainMod .. " + CTRL + B", hl.dsp.exec_cmd("pkill waybar && waybar"))
 hl.bind(mainMod .. " + CTRL + A", hl.dsp.exec_cmd("ghostty --title=wiremix -e wiremix"))
+hl.bind(mainMod .. " + CTRL + T", hl.dsp.exec_cmd("ghostty --title=btop -e btop"))
