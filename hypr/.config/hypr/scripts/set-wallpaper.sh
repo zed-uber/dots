@@ -11,6 +11,6 @@ hyprctl hyprpaper unload all
 hyprctl hyprpaper preload "$WALLPAPER"
 hyprctl hyprpaper wallpaper ",$WALLPAPER"
 
-wal -i "$WALLPAPER" -q
+wal -i "$WALLPAPER" -q --backend "schemer2"
 
 hyprctl reload
