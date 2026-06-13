@@ -1,8 +1,8 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Binds/
 
 local terminal    = "ghostty"
-local fileManager = "dolphin"
-local menu        = "hyprlauncher"
+local fileManager = "nautilus"
+local menu        = "rofi -show drun"
 local browser     = "zen-browser"
 
 local mainMod = "SUPER"  
@@ -58,6 +58,7 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
 -- Application keybindings
+hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("signal-desktop --password-store=\"kwallet6\""))
@@ -65,3 +66,4 @@ hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.confi
 
 -- Control keybindings
 hl.bind(mainMod .. " + CTRL + B", hl.dsp.exec_cmd("pkill waybar && waybar"))
+hl.bind(mainMod .. " + CTRL + A", hl.dsp.exec_cmd("ghostty --title=wiremix -e wiremix"))

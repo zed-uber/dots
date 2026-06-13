@@ -1,0 +1,103 @@
+configuration {
+    modi:                 "drun,run,window";
+    show-icons:           true;
+    drun-display-format:  "{name}";
+    display-drun:         "Apps";
+    display-run:          "Run";
+    display-window:       "Windows";
+    terminal:             "ghostty";
+    font:                 "JetBrainsMono Nerd Font 12";
+}
+
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+window {
+    width:            40%;
+    border:           4px solid;
+    border-color:     @selected-normal-background;
+    border-radius:    10px;
+    background-color: @background;
+    padding:          20px;
+}
+
+mainbox {
+    background-color: transparent;
+    children:         [inputbar, listview];
+    spacing:          12px;
+}
+
+inputbar {
+    background-color: transparent;
+    border:           1px solid;
+    border-color:     @selected-normal-background;
+    border-radius:    8px;
+    padding:          8px 12px;
+    children:         [prompt, entry];
+    spacing:          8px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color:       @selected-normal-background;
+}
+
+entry {
+    background-color:   transparent;
+    text-color:         @foreground;
+    placeholder-color:  @normal-foreground;
+    placeholder:        "Search...";
+}
+
+listview {
+    background-color: transparent;
+    border:           0px;
+    spacing:          4px;
+    fixed-height:     true;
+    lines:            8;
+    scrollbar:        false;
+    padding:          4px 0px;
+}
+
+element {
+    background-color: transparent;
+    border-radius:    6px;
+    padding:          8px 12px;
+    spacing:          8px;
+    orientation:      horizontal;
+}
+
+element-icon {
+    background-color: inherit;
+    size:             24px;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element.normal.normal {
+    background-color: transparent;
+    text-color:       @normal-foreground;
+}
+
+element.alternate.normal {
+    background-color: transparent;
+    text-color:       @alternate-normal-foreground;
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element.normal.active {
+    background-color: transparent;
+    text-color:       @active-foreground;
+}
+
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}

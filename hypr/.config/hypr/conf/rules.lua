@@ -36,7 +36,7 @@ hl.window_rule({
     name  = "wiremix-float",
     match = { title = "wiremix" },
     float = true,
-    size  = "1000 1000",
+    size  = "1000 800",
     move  = {"(monitor_w - window_w) / 2", "(monitor_h - window_h) / 2"},
 })
 
