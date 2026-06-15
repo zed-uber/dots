@@ -9,6 +9,6 @@
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
 -- end)
 
-hl.on("hyprland.start", function () 
-  hl.exec_cmd("waybar & hyprpaper")
+hl.on("hyprland.start", function ()
+  hl.exec_cmd("waybar & hyprpaper & hypridle")
 end)
